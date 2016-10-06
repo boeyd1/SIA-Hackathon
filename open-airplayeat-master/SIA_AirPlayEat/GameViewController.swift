@@ -11,7 +11,7 @@ import UIKit
 class GameViewController: UIViewController {
     
     @IBOutlet weak var titleLabel: UILabel!
-    @IBOutlet weak var revealedNumberLabel: UILabel!
+    @IBOutlet weak var revealedNumbersTextView: UITextView!
     
     @IBOutlet weak var sq00: UIButton!
     @IBOutlet weak var sq01: UIButton!
@@ -302,9 +302,20 @@ class GameViewController: UIViewController {
             bingoCheck = true
         }
         
+        for checkingSquare in arrayOfSquaresSelected{
+            if !arrayOfRevealedNumbers.contains(dictOfSquares[checkingSquare]!){
+                bingoCheck = false
+            }
+        }
+        
         if bingoCheck{
             self.present(bingo(), animated: true, completion: nil)
+        }else{
+            self.present(bingoError(), animated: true, completion: nil)
         }
+        
+        // put this where the array is supposed to be updated - firebase method
+        //arrayOfRevealedNumbers.append(arrayOfRevealedNumbers.count * 2)
         
     }
     
@@ -316,8 +327,14 @@ class GameViewController: UIViewController {
 
     }
     
-    @IBAction func instructionButtonTapped(_ sender: AnyObject) {
+    func bingoError() -> UIAlertController{
+        let alert = UIAlertController(title: "Error", message: "I'm sorry but you either do not have a winning combination or did not activate the right squares.", preferredStyle: UIAlertControllerStyle.alert)
+        alert.addAction(UIAlertAction(title: "Nay!", style: UIAlertActionStyle.default, handler: nil))
+        
+        return alert
+        
     }
+
     
     var arrayOfSquaresSelected: [String] = [] {
         didSet{
@@ -325,9 +342,17 @@ class GameViewController: UIViewController {
         }
     }
     
+    var dictOfSquares: [String: Int] = [:]
+    
     var arrayOfSquares: [UIButton] = []
     
     var arrayOfNumbers: [Int] = []
+    
+    var arrayOfRevealedNumbers: [Int] = [] {
+        didSet{
+            revealedNumbersTextView.text = arrayOfRevealedNumbers.description
+        }
+    }
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -370,10 +395,22 @@ class GameViewController: UIViewController {
             arrayOfSquares[i].setTitle(String(arrayOfNumbers[i]), for: .normal)
             arrayOfSquares[i].layer.borderWidth = 1
             arrayOfSquares[i].layer.borderColor = UIColor.darkGray.cgColor
-            
+        }
+        
+        var indexForArrayOfNumbers = 0
+        
+        for i in 0...4 {
+            for j in 0...4{
+                dictOfSquares["\(i)\(j)"] = arrayOfNumbers[indexForArrayOfNumbers]
+                indexForArrayOfNumbers += 1
+            }
         }
         // Do any additional setup after loading the view, typically from a nib.
     }
+    
+    @IBAction func unwindToGameVC(segue: UIStoryboardSegue){}
+    
+   
     
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()

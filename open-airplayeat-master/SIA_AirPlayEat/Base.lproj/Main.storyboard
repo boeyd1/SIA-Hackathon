@@ -3,6 +3,7 @@
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11161"/>
+        <capability name="Alignment constraints with different attributes" minToolsVersion="5.1"/>
         <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
@@ -477,14 +478,6 @@
                                 <color key="textColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Ojs-CI-NCC" userLabel="RevealedNumbers">
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="60" id="gUD-75-KnL"/>
-                                </constraints>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <nil key="textColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" hasAttributedTitle="YES" translatesAutoresizingMaskIntoConstraints="NO" id="9KG-XN-w9S">
                                 <constraints>
                                     <constraint firstAttribute="width" constant="100" id="4eb-4d-SOr"/>
@@ -502,7 +495,7 @@
                                     </attributedString>
                                 </state>
                                 <connections>
-                                    <action selector="instructionButtonTapped:" destination="9pv-A4-QxB" eventType="touchUpInside" id="PCz-aY-KKK"/>
+                                    <segue destination="h5c-Et-Thr" kind="show" identifier="showInstructions" id="Do3-GX-p0Z"/>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="7rf-KR-smV" userLabel="Bingo!">
@@ -514,6 +507,15 @@
                                     <action selector="bingoButtonTapped:" destination="9pv-A4-QxB" eventType="touchUpInside" id="vGO-Jg-AH1"/>
                                 </connections>
                             </button>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="YwO-f7-Ejf" userLabel="RevealedNum">
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="60" id="z1D-ga-0Lg"/>
+                                </constraints>
+                                <string key="text">Lorem ipsum dolor sit er elit lamet, consectetaur cillium adipisicing pecu, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Nam liber te conscient to factor tum poen legum odioque civiuda.</string>
+                                <fontDescription key="fontDescription" type="system" pointSize="16"/>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                            </textView>
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
@@ -522,20 +524,20 @@
                             <constraint firstItem="9KG-XN-w9S" firstAttribute="centerX" secondItem="tsR-hK-woN" secondAttribute="centerX" id="7Hv-wd-oLC"/>
                             <constraint firstItem="hOG-Fe-G2n" firstAttribute="leading" secondItem="tsR-hK-woN" secondAttribute="leadingMargin" constant="10" id="BkH-I5-QBp"/>
                             <constraint firstItem="dT7-n5-lJ3" firstAttribute="leading" secondItem="tsR-hK-woN" secondAttribute="leadingMargin" constant="10" id="GpN-R9-B7f"/>
-                            <constraint firstItem="Ojs-CI-NCC" firstAttribute="top" secondItem="dT7-n5-lJ3" secondAttribute="bottom" constant="5" id="M9h-m9-ZM0"/>
-                            <constraint firstAttribute="trailingMargin" secondItem="Ojs-CI-NCC" secondAttribute="trailing" constant="10" id="SAx-Xo-dzc"/>
+                            <constraint firstItem="YwO-f7-Ejf" firstAttribute="top" secondItem="dT7-n5-lJ3" secondAttribute="bottom" constant="5" id="Htf-9j-cWt"/>
                             <constraint firstAttribute="trailingMargin" secondItem="dT7-n5-lJ3" secondAttribute="trailing" constant="10" id="UlP-zn-UDr"/>
-                            <constraint firstItem="Ojs-CI-NCC" firstAttribute="leading" secondItem="tsR-hK-woN" secondAttribute="leadingMargin" constant="10" id="aLh-va-ft3"/>
                             <constraint firstAttribute="trailingMargin" secondItem="hOG-Fe-G2n" secondAttribute="trailing" constant="10" id="cmd-wm-4GH"/>
+                            <constraint firstItem="YwO-f7-Ejf" firstAttribute="trailing" secondItem="dT7-n5-lJ3" secondAttribute="trailing" id="hnS-yP-4RO"/>
                             <constraint firstItem="dT7-n5-lJ3" firstAttribute="top" secondItem="Ia1-K6-d13" secondAttribute="bottom" id="nvD-rE-Gt7"/>
                             <constraint firstItem="hOG-Fe-G2n" firstAttribute="centerX" secondItem="tsR-hK-woN" secondAttribute="centerX" id="qM2-UO-9Nd"/>
+                            <constraint firstItem="YwO-f7-Ejf" firstAttribute="leading" secondItem="dT7-n5-lJ3" secondAttribute="leading" id="rYk-nh-MDO"/>
                             <constraint firstItem="4ug-Mw-9AY" firstAttribute="top" secondItem="9KG-XN-w9S" secondAttribute="bottom" constant="20" id="xKs-3m-okg"/>
-                            <constraint firstItem="hOG-Fe-G2n" firstAttribute="top" secondItem="Ojs-CI-NCC" secondAttribute="bottom" constant="5" id="xjx-U8-Pse"/>
+                            <constraint firstItem="hOG-Fe-G2n" firstAttribute="top" secondItem="YwO-f7-Ejf" secondAttribute="bottom" constant="5" id="zsk-e9-8GU"/>
                         </constraints>
                     </view>
                     <tabBarItem key="tabBarItem" title="Game" image="first" id="acW-dT-cKf"/>
                     <connections>
-                        <outlet property="revealedNumberLabel" destination="Ojs-CI-NCC" id="LXk-iw-5Mc"/>
+                        <outlet property="revealedNumbersTextView" destination="YwO-f7-Ejf" id="yhn-MM-DfK"/>
                         <outlet property="sq00" destination="1ms-DT-lNN" id="mKQ-AZ-yOY"/>
                         <outlet property="sq01" destination="GZC-8N-X5e" id="tC5-FB-hRL"/>
                         <outlet property="sq02" destination="93F-4c-9XG" id="rNU-OP-xBp"/>
@@ -567,6 +569,115 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="W5J-7L-Pyd" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1720.8" y="-665.21739130434787"/>
+        </scene>
+        <!--Instruction View Controller-->
+        <scene sceneID="HMu-pZ-9JG">
+            <objects>
+                <viewController id="h5c-Et-Thr" customClass="InstructionViewController" customModule="SIA_AirPlayEat" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="DRd-Uc-vmc"/>
+                        <viewControllerLayoutGuide type="bottom" id="4VC-St-Xa4"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="2V7-QF-F3H">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="601.5"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="bingoBoard" translatesAutoresizingMaskIntoConstraints="NO" id="MgK-Sh-459">
+                                <constraints>
+                                    <constraint firstAttribute="width" secondItem="MgK-Sh-459" secondAttribute="height" multiplier="1:1" id="EdV-gX-awb"/>
+                                </constraints>
+                            </imageView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Instructions" textAlignment="center" lineBreakMode="wordWrap" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ueQ-DH-eds">
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="30" id="GFd-hQ-zIj"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="18"/>
+                                <color key="textColor" red="1" green="0.0" blue="0.50196081400000003" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="a7l-Av-yRZ">
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="14"/>
+                                <state key="normal" title="&lt; Back"/>
+                                <connections>
+                                    <action selector="backButtonTapped:" destination="h5c-Et-Thr" eventType="touchUpInside" id="ppf-iJ-bhq"/>
+                                </connections>
+                            </button>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" usesAttributedText="YES" translatesAutoresizingMaskIntoConstraints="NO" id="kga-aX-mqz">
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <attributedString key="attributedText">
+                                    <fragment>
+                                        <string key="content">A number will be generated every 2 minutes. If the number matches with any on your board, click the square to activate it.
+
+</string>
+                                        <attributes>
+                                            <font key="NSFont" metaFont="menu" size="14"/>
+                                        </attributes>
+                                    </fragment>
+                                    <fragment content="To win: Be ">
+                                        <attributes>
+                                            <font key="NSFont" size="14" name=".AppleSystemUIFont"/>
+                                            <paragraphStyle key="NSParagraphStyle" alignment="natural" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0"/>
+                                        </attributes>
+                                    </fragment>
+                                    <fragment content="one of the first three players to click Bingo!">
+                                        <attributes>
+                                            <color key="NSColor" red="1" green="0.0" blue="0.50196078431372548" alpha="1" colorSpace="calibratedRGB"/>
+                                            <font key="NSFont" size="14" name=".AppleSystemUIFont"/>
+                                            <paragraphStyle key="NSParagraphStyle" alignment="natural" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0"/>
+                                            <integer key="NSUnderline" value="1"/>
+                                            <color key="NSUnderlineColor" red="1" green="0.0" blue="0.50196078431372548" alpha="1" colorSpace="calibratedRGB"/>
+                                        </attributes>
+                                    </fragment>
+                                    <fragment content=" and ">
+                                        <attributes>
+                                            <font key="NSFont" size="14" name=".AppleSystemUIFont"/>
+                                            <paragraphStyle key="NSParagraphStyle" alignment="natural" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0"/>
+                                            <color key="NSUnderlineColor" red="1" green="0.0" blue="0.50196078431372548" alpha="1" colorSpace="calibratedRGB"/>
+                                        </attributes>
+                                    </fragment>
+                                    <fragment>
+                                        <string key="content">have 5 matching squares:
+</string>
+                                        <attributes>
+                                            <font key="NSFont" size="14" name=".AppleSystemUIFont"/>
+                                            <paragraphStyle key="NSParagraphStyle" alignment="natural" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0"/>
+                                        </attributes>
+                                    </fragment>
+                                    <fragment>
+                                        <string key="content">    - In a row
+    - In a column
+    - Diagonally</string>
+                                        <attributes>
+                                            <font key="NSFont" metaFont="menu" size="14"/>
+                                        </attributes>
+                                    </fragment>
+                                </attributedString>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                            </textView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="ueQ-DH-eds" firstAttribute="top" secondItem="DRd-Uc-vmc" secondAttribute="bottom" id="JYy-Xa-nxx"/>
+                            <constraint firstItem="a7l-Av-yRZ" firstAttribute="bottom" secondItem="ueQ-DH-eds" secondAttribute="bottom" id="K8t-R7-Kmi"/>
+                            <constraint firstItem="kga-aX-mqz" firstAttribute="trailing" secondItem="MgK-Sh-459" secondAttribute="trailing" id="Oww-6H-GRb"/>
+                            <constraint firstItem="MgK-Sh-459" firstAttribute="top" secondItem="ueQ-DH-eds" secondAttribute="bottom" constant="10" id="QOQ-Jp-lU2"/>
+                            <constraint firstItem="MgK-Sh-459" firstAttribute="bottom" secondItem="2V7-QF-F3H" secondAttribute="centerY" constant="50" id="kfS-MA-VtJ"/>
+                            <constraint firstItem="MgK-Sh-459" firstAttribute="centerX" secondItem="2V7-QF-F3H" secondAttribute="centerX" id="nN2-ho-LVL"/>
+                            <constraint firstItem="kga-aX-mqz" firstAttribute="top" secondItem="MgK-Sh-459" secondAttribute="bottom" constant="10" id="pAQ-Oc-r8K"/>
+                            <constraint firstItem="ueQ-DH-eds" firstAttribute="centerX" secondItem="2V7-QF-F3H" secondAttribute="centerX" id="ris-eY-1YU"/>
+                            <constraint firstItem="4VC-St-Xa4" firstAttribute="top" secondItem="kga-aX-mqz" secondAttribute="bottom" constant="10" id="sOQ-dv-Ui4"/>
+                            <constraint firstItem="a7l-Av-yRZ" firstAttribute="leading" secondItem="MgK-Sh-459" secondAttribute="leading" id="tfp-eN-wmo"/>
+                            <constraint firstItem="kga-aX-mqz" firstAttribute="leading" secondItem="MgK-Sh-459" secondAttribute="leading" id="vkG-eT-Qhy"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <segue destination="WNw-qG-p2h" kind="unwind" identifier="unwindToGameVC" unwindAction="unwindToGameVCWithSegue:" id="U0c-PM-g3V"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="zzI-un-5al" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <exit id="WNw-qG-p2h" userLabel="Exit" sceneMemberID="exit"/>
+            </objects>
+            <point key="canvasLocation" x="2535" y="-666"/>
         </scene>
         <!--Seconds-->
         <scene sceneID="wg7-f3-ORb">
@@ -762,6 +873,7 @@
         </scene>
     </scenes>
     <resources>
+        <image name="bingoBoard" width="266" height="266"/>
         <image name="first" width="30" height="30"/>
         <image name="second" width="30" height="30"/>
     </resources>

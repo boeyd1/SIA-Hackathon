@@ -16,6 +16,7 @@
 		FF5F4B4F1DA24E4100A6A1EB /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF5F4B4E1DA24E4100A6A1EB /* LoginViewController.swift */; };
 		FF5F4B511DA24F1000A6A1EB /* MiscViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF5F4B501DA24F1000A6A1EB /* MiscViewController.swift */; };
 		FF5F4B531DA24FAD00A6A1EB /* ContainerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF5F4B521DA24FAD00A6A1EB /* ContainerViewController.swift */; };
+		FF703AFE1DA61C1B003E3930 /* InstructionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF703AFD1DA61C1B003E3930 /* InstructionViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -30,6 +31,7 @@
 		FF5F4B4E1DA24E4100A6A1EB /* LoginViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
 		FF5F4B501DA24F1000A6A1EB /* MiscViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = MiscViewController.swift; path = ../MiscViewController.swift; sourceTree = "<group>"; };
 		FF5F4B521DA24FAD00A6A1EB /* ContainerViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ContainerViewController.swift; path = ../ContainerViewController.swift; sourceTree = "<group>"; };
+		FF703AFD1DA61C1B003E3930 /* InstructionViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = InstructionViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -66,6 +68,7 @@
 				FF5F4B4E1DA24E4100A6A1EB /* LoginViewController.swift */,
 				FF5F4B521DA24FAD00A6A1EB /* ContainerViewController.swift */,
 				FF5F4B3C1DA246AE00A6A1EB /* GameViewController.swift */,
+				FF703AFD1DA61C1B003E3930 /* InstructionViewController.swift */,
 				FF5F4B3E1DA246AE00A6A1EB /* SecondsViewController.swift */,
 				FF5F4B501DA24F1000A6A1EB /* MiscViewController.swift */,
 				FF5F4B401DA246AE00A6A1EB /* Main.storyboard */,
@@ -151,6 +154,7 @@
 			files = (
 				FF5F4B4F1DA24E4100A6A1EB /* LoginViewController.swift in Sources */,
 				FF5F4B3F1DA246AE00A6A1EB /* SecondsViewController.swift in Sources */,
+				FF703AFE1DA61C1B003E3930 /* InstructionViewController.swift in Sources */,
 				FF5F4B3B1DA246AE00A6A1EB /* AppDelegate.swift in Sources */,
 				FF5F4B3D1DA246AE00A6A1EB /* GameViewController.swift in Sources */,
 				FF5F4B531DA24FAD00A6A1EB /* ContainerViewController.swift in Sources */,
@@ -316,6 +320,7 @@
 				FF5F4B4D1DA246AE00A6A1EB /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
